@@ -41,7 +41,7 @@ app.get("/students", async function(req,res){
         let answer = await db.collection("students").find().toArray();
 
         await connection.close();
-
+        console.log(answer);
         return res.json({
             answer
         })
