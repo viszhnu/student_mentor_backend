@@ -12,7 +12,12 @@ const mongodb=require("mongodb");
 const URL="mongodb+srv://vishnu:n3Uf35jUEa!4qEr@cluster0.xfblp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const DBname="student_mentor";
 
-app.post("/student", async function(req,res){
+app.post("/",function(req,res){
+    res.json({
+        message:"hello"
+    })
+})
+/*app.post("/student", async function(req,res){
     console.log("student post")
 
     try{
@@ -216,4 +221,4 @@ app.delete("/mentor/:id",async function(req,res){
     }catch{
         console.log("error in mentor deletion");
     }
-})
+})*/
