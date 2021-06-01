@@ -13,6 +13,7 @@ const URL="mongodb+srv://vishnu:n3Uf35jUEa!4qEr@cluster0.xfblp.mongodb.net/myFir
 const DBname="student_mentor";
 
 app.post("/student", async function(req,res){
+    console.log("student post")
 
     try{
         let connection = await mongodb.connect(URL);
@@ -33,6 +34,7 @@ app.post("/student", async function(req,res){
 })
 
 app.get("/students", async function(req,res){
+    console.log("student get")
     try{
         let connection = await mongodb.connect(URL);
 
