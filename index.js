@@ -38,7 +38,7 @@ app.get("/",function(req,res){
         console.log("error in student post");
     }
 })
-
+*/
 app.get("/students", async function(req,res){
     console.log("student get")
     try{
@@ -58,7 +58,7 @@ app.get("/students", async function(req,res){
         console.log("error in student get");
     }
 })
-
+/*
 app.get("/student/:id", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
