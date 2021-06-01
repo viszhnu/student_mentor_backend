@@ -12,7 +12,7 @@ app.use(express.json());
 // const URL="mongodb+srv://vishnu:n3Uf35jUEa!4qEr@cluster0.xfblp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // const DBname="student_mentor";
 
-app.post("/",function(req,res){
+app.get("/",function(req,res){
     console.log("hello")
     res.json({
         message:"hello"
