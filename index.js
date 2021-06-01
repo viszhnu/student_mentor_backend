@@ -12,13 +12,8 @@ app.use(express.json());
  const URL="mongodb+srv://vishnu:n3Uf35jUEa!4qEr@cluster0.xfblp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
  const DBname="student_mentor";
 
-app.get("/",function(req,res){
-    console.log("hello")
-    res.json({
-        message:"hello"
-    })
-})
-/*app.post("/student", async function(req,res){
+
+app.post("/student", async function(req,res){
     console.log("student post")
 
     try{
@@ -38,7 +33,7 @@ app.get("/",function(req,res){
         console.log("error in student post");
     }
 })
-*/
+
 app.get("/students", async function(req,res){
     console.log("student get")
     try{
@@ -58,7 +53,7 @@ app.get("/students", async function(req,res){
         console.log("error in student get");
     }
 })
-/*
+
 app.get("/student/:id", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
@@ -222,4 +217,4 @@ app.delete("/mentor/:id",async function(req,res){
     }catch{
         console.log("error in mentor deletion");
     }
-})*/
+})
