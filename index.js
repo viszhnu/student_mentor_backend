@@ -17,7 +17,7 @@ app.post("/student", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db = await connection.db(DBname);
         
         await db.collection("students").insertOne(req.body);
 
@@ -36,7 +36,7 @@ app.get("/students", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db = await connection.db(DBname);
         
         let answer = await db.collection("students").find().toArray();
 
@@ -55,7 +55,7 @@ app.get("/student/:id", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db = await connection.db(DBname);
         
         let answer = await db.collection("students").findOne({_id:mongodb.ObjectID(req.params.id)});
 
@@ -74,7 +74,7 @@ app.put("/student/:id", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db =await connection.db(DBname);
         
         let answer = await db.collection("students").updateOne({_id:mongodb.ObjectID(req.params.id)},{$set:req.body});
 
@@ -95,7 +95,7 @@ app.post("/mentor", async function(req,res){
         
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db = await connection.db(DBname);
         
         await db.collection("mentors").insertOne(req.body);
         
@@ -115,7 +115,7 @@ app.get("/mentors", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db = await connection.db(DBname);
         
         let answer = await db.collection("mentors").find().toArray();
 
@@ -135,7 +135,7 @@ app.get("/mentor/:id", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db = await connection.db(DBname);
         
 
         let answer = await db.collection("mentors").findOne({_id:mongodb.ObjectID(req.params.id)});
@@ -158,7 +158,7 @@ app.put("/mentor/:id", async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db = await connection.db(DBname);
         
         console.log(req.body.students);
         req.body.students.map(i=>{
@@ -182,7 +182,7 @@ app.delete("/student/:id",async function(req,res){
     try{
         let connection = await mongodb.connect(URL);
 
-        let db = connection.db(DBname);
+        let db = await connection.db(DBname);
         
         let answer = await db.collection("students").deleteOne({_id:mongodb.ObjectID(req.params.id)});
 
