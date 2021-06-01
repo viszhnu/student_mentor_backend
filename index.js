@@ -43,7 +43,7 @@ app.get("/students", async function(req,res){
         await connection.close();
 
         return res.json({
-            ans:answer
+            answer
         })
         
     }catch{
