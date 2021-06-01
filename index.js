@@ -8,9 +8,9 @@ const cors=require("cors");
 app.use(cors());
 app.use(express.json());
 
-// const mongodb=require("mongodb");
-// const URL="mongodb+srv://vishnu:n3Uf35jUEa!4qEr@cluster0.xfblp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// const DBname="student_mentor";
+ const mongodb=require("mongodb");
+ const URL="mongodb+srv://vishnu:n3Uf35jUEa!4qEr@cluster0.xfblp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+ const DBname="student_mentor";
 
 app.get("/",function(req,res){
     console.log("hello")
